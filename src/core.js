@@ -1,18 +1,22 @@
-import {fromJS, Map, List} from 'immutable'
+import {fromJS, Map} from 'immutable'
 
-export function addTask(state, title) {
+export const INITIAL_STATE = fromJS({
+    tasks: []
+})
+
+export function addTask(state=INITIAL_STATE, title) {
     if (state.has('task')) {
         return state
     }
     return state.setIn(['task', 'title'], title)
 }
 
-export function vote(state, entry) {
+export function vote(state, estimate) {
     if (!state.has('task')) {
         return state
     }
     return state.updateIn(
-        ['task', 'tally', entry.toString()],
+        ['task', 'tally', estimate.toString()],
         0,
         tally => tally + 1
     )
