@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node index.js",
     "test": "jest --watch",
     "test:watch": "npm test -- --watch"
   },
@@ -23,6 +24,8 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-immutable": "^4.0.0",
+    "socket.io": "^2.0.3"
   }
 }

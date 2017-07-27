@@ -6,7 +6,9 @@ describe('reducer', () => {
 
     it('handles ADD_TASK', () => {
         const initialState = fromJS({
-            tasks: []
+            tasks: [],
+            task: {},
+            revealed: false
         })
         const action = {type: 'ADD_TASK', title: 'Fix stuff'}
         const nextState = reducer(initialState, action)
@@ -15,7 +17,8 @@ describe('reducer', () => {
             tasks: [],
             task: {
                 title: 'Fix stuff'
-            }
+            },
+            revealed: false
         }))
     })
 
@@ -24,7 +27,8 @@ describe('reducer', () => {
             tasks: [],
             task: {
                 title: 'Fix stuff'
-            }
+            },
+            revealed: false
         })
         const action = {type: 'VOTE', estimate: 3}
         const nextState = reducer(initialState, action)
@@ -36,7 +40,34 @@ describe('reducer', () => {
                 tally: {
                     3: 1
                 }
-            }
+            },
+            revealed: false
+        }))
+    })
+
+    it('handles REVEAL', () => {
+        const initialState = fromJS({
+            tasks: [],
+            task: {
+                title: 'Fix stuff',
+                tally: {
+                    3: 1
+                }
+            },
+            revealed: false
+        })
+        const action = {type: 'REVEAL'}
+        const nextState = reducer(initialState, action)
+
+        expect(nextState).toEqual(fromJS({
+            tasks: [],
+            task: {
+                title: 'Fix stuff',
+                tally: {
+                    3: 1
+                }
+            },
+            revealed: true
         }))
     })
 
@@ -48,9 +79,10 @@ describe('reducer', () => {
                 tally: {
                     3: 1
                 }
-            }
+            },
+            revealed: false
         })
-        const action = {type: 'ESTIMATE', estimate: 3}
+        const action = {type: 'ESTIMATE', estimate: 3, title: 'Fix stuff'}
         const nextState = reducer(initialState, action)
 
         expect(nextState).toEqual(fromJS({
@@ -59,7 +91,9 @@ describe('reducer', () => {
                     title: 'Fix stuff',
                     estimate: 3
                 }
-            ]
+            ],
+            task: {},
+            revealed: false
         }))
     })
 
