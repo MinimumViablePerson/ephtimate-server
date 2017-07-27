@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel -d ./dist ./src",
     "prebuild": "rm -rf dist",
-    "start": "npm run prebuild && npm run build && NODE_ENV=production node ./dist/index.js",
+    "start": "NODE_ENV=production node ./dist/index.js",
     "prestart": "npm build",
     "test": "jest --watch",
     "test:watch": "npm test -- --watch"
