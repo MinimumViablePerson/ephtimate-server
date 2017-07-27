@@ -3,8 +3,8 @@ import Server from 'socket.io'
 import {makeStore} from './store'
 
 export function startServer(store) {
-    const io = new Server().attach(8027)
-    // process.env.PORT ||
+    const io = new Server().attach(process.env.PORT)
+    console.log('port %d', process.env.PORT)
 
     store.subscribe(
         () => { 
