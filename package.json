@@ -4,6 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
+    "build": "babel -d ./dist ./src",
     "start": "NODE_ENV=production node ./dist/index.js",
     "test": "jest --watch",
     "test:watch": "npm test -- --watch"
