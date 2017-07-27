@@ -4,6 +4,7 @@ import {makeStore} from './store'
 
 export function startServer(store) {
     const io = new Server().attach(process.env.PORT || 8027)
+    console.log(process.env.PORT)
 
     store.subscribe(
         () => { 
