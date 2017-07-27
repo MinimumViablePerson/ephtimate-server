@@ -4,10 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    // "build": "babel -d ./dist ./src",
-    // "prebuild": "rm -rf dist",
     "start": "NODE_ENV=production node ./dist/index.js",
-    // "prestart": "npm run build",
     "test": "jest --watch",
     "test:watch": "npm test -- --watch"
   },
