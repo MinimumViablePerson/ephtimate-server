@@ -2,9 +2,11 @@ import Server from 'socket.io'
 
 import {makeStore} from './store'
 
+const PORT = process.env.PORT || 8027
+
 export function startServer(store) {
-    const io = new Server().attach(process.env.PORT)
-    console.log('port %d', process.env.PORT)
+    const io = new Server().attach(PORT)
+    console.log('Listening on port: %d', PORT)
 
     store.subscribe(
         () => { 

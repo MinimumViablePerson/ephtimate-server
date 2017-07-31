@@ -1,1 +1,5 @@
+# NPM modules folder
 node_modules
+
+# PEM certificates
+*.pem
