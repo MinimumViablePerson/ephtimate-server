@@ -1,4 +1,4 @@
-# ephtimate-server
+# Ephtimate Server
 
 Server for the Ephtimate app, using [Node.js][1], [Redux][2] and [Socket.io][3].
 
@@ -8,7 +8,7 @@ Ephtimate is a small web application that will hopefully make your task estimati
 
 ## How to run it locally
 
-You will need to have Node.js installed. If you don't already, find out how [**here**][1].
+You will need to have Node.js installed. If you don't already, find out how [here][1].
 
 Once that is done, [clone this repository][4], head to its folder and run `npm install`, followed by `npm start`.
 
