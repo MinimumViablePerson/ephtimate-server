@@ -7,6 +7,8 @@ const tasks = (state=List(), action) => {
             title: action.title,
             estimate: action.estimate
         }))
+    case 'CLEAR_TASKS':
+        return List()
     default:
         return state
     }

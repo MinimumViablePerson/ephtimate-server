@@ -7,7 +7,8 @@
     "build": "babel -d ./dist ./src",
     "prebuild": "rm -rf dist",
     "start": "NODE_ENV=production node ./dist/index.js",
-    "dev": "babel-node src/index.js",
+    "prestart": "npm run build",
+    "start-dev": "babel-node src/index.js",
     "test": "jest --watch",
     "test:watch": "npm test -- --watch"
   },

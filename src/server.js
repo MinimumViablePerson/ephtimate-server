@@ -2,7 +2,7 @@ import Server from 'socket.io'
 
 import {makeStore} from './store'
 
-const PORT = process.env.PORT || 8027
+export const PORT = 8027
 
 export function startServer(store) {
     const io = new Server().attach(PORT)
