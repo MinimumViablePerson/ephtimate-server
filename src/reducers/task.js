@@ -10,6 +10,8 @@ const task = (state=Map(), action) => {
         return vote(state, action.estimate, action.hasVoted)
     case 'ESTIMATE':
         return Map()
+    case 'CANCEL_TASK':
+        return Map()
     default:
         return state
     }
