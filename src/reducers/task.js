@@ -8,7 +8,8 @@ const task = (state=Map(), action) => {
         return addTask(state, action.title)
     case 'VOTE':
         return vote(state, action.estimate, action.hasVoted)
-    case 'ESTIMATE' || 'CANCEL_TASK':
+    case 'ESTIMATE':
+    case 'CANCEL_TASK':
         return state.remove('title')
                     .remove('tally')
     default:
